@@ -660,3 +660,4 @@
 - 2025-05-25 15:52 +0545 | aayushmalla13 | [ML] Model trainer (feat)
 - 2025-05-30 17:03 +0545 | aayushmalla13 | [ML] Data preprocessor (fix)
 - 2025-06-04 18:14 +0545 | aayushmalla13 | [ML] Deep ensemble (feat)
+- 2025-02-24 14:45 +0545 | babin411 | [ML] PatchTST implementation (merge)
