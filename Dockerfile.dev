@@ -1,0 +1,55 @@
+# Development Dockerfile for AirAware PM2.5 Forecasting System
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    ENVIRONMENT=development
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    vim \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create app directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install development dependencies
+RUN pip install --no-cache-dir \
+    pytest \
+    pytest-cov \
+    black \
+    flake8 \
+    mypy \
+    jupyter \
+    ipython
+
+# Copy application code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p data/artifacts data/cache data/interim data/processed data/raw data/test_data \
+    results/calibration results/explainability \
+    logs
+
+# Set permissions
+RUN chmod +x scripts/*.py
+
+# Expose ports
+EXPOSE 8000 8501 8001
+
+# Default command for development
+CMD ["python", "scripts/start_api.py", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+

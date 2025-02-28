@@ -19,3 +19,17 @@ torch
 # Documentation
 mkdocs
 mkdocs-material
+
+# Additional dependencies
+optuna
+xarray
+netcdf4
+h5py
+joblib
+pyyaml
+seaborn
+geopy
+python-dotenv
+httpx
+typer
+matplotlib

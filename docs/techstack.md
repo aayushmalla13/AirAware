@@ -21,3 +21,11 @@
 ## Tooling
 - MkDocs + Material theme (docs)
 - Scripts for training, evaluation, and tuning
+
+## Containerization & Deployment
+- Docker (containerization)
+- Docker Compose (orchestration)
+- Multi-stage builds (optimized images)
+- Health checks (service monitoring)
+- Volume mounts (data persistence)
+- Environment variables (configuration)

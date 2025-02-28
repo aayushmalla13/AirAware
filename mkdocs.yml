@@ -18,4 +18,5 @@ nav:
   - Algorithms: algorithms.md
   - Architecture: architecture.md
   - Codebase: codebase.md
+  - Docker Setup: ../README_DOCKER.md
 

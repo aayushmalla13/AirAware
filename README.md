@@ -4,6 +4,28 @@ AirAware is a production-grade system for short-term PM2.5 forecasting in the Ka
 
 ## Quick start
 
+### Option 1: Docker (Recommended)
+
+Prerequisites:
+- Docker and Docker Compose
+
+Run with Docker:
+```bash
+# Build and start all services
+docker compose up --build
+
+# Or use the helper script
+./scripts/docker_helper.sh build
+./scripts/docker_helper.sh up
+
+# Services will be available at:
+# - API: http://localhost:8000
+# - UI: http://localhost:8501
+# - API docs: http://localhost:8000/docs
+```
+
+### Option 2: Local Development
+
 Prerequisites:
 - Python 3.11+ (3.12 recommended)
 - Linux/macOS (Windows via WSL recommended)
@@ -79,12 +101,17 @@ The service auto-loads the best tuned `blend_distance_ug` and `weight_floor` val
 ## Documentation (MkDocs)
 We ship a full documentation site with architecture, algorithms, and code walkthrough.
 
-- Local preview:
+### Docker Documentation
 ```bash
+# Run documentation service
+docker compose up docs
+
+# Or build and serve locally
 pip install mkdocs mkdocs-material
 mkdocs serve  # http://127.0.0.1:8000 by default
 ```
-- Build static docs:
+
+### Build static docs:
 ```bash
 mkdocs build  # outputs to site/
 ```
@@ -95,15 +122,24 @@ Start here: `docs/index.md`. Key pages:
 - Algorithms: `docs/algorithms.md`
 - Architecture: `docs/architecture.md`
 - Code overview: `docs/codebase.md`
+- Docker setup: `README_DOCKER.md`
 
 ## Extra materials
 - Model performance and artifacts are exposed via the API `/models` endpoint and reflected in the UI badges.
 - Feature importance and what-if analysis are available in dedicated UI tabs.
 
 ## Troubleshooting
+
+### Docker Issues
+- **Container won't start**: Check logs with `docker compose logs <service>`
+- **API connection issues**: Ensure `API_BASE_URL` environment variable is set correctly
+- **Port conflicts**: Change ports in `docker-compose.yml` if 8000/8501 are in use
+- **Build failures**: Try `docker compose build --no-cache`
+
+### Local Development Issues
 - ERA5 fetch issues: the system falls back to sensible defaults; cached ERA5 data is used when available.
 - Prophet backend (cmdstanpy) must be installed and able to compile/optimize; if needed, follow Prophet docs to set up CmdStan.
-- If UI shows deprecation for `use_container_width`, we’ve already migrated to `width='stretch'`.
+- If UI shows deprecation for `use_container_width`, we've already migrated to `width='stretch'`.
 
 ## License
 Add your license here.

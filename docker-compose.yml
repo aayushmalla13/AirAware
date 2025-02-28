@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend Service
+  api:
+    build: .
+    container_name: airaware-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - ENVIRONMENT=production
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./logs:/app/logs
+      - ./configs:/app/configs
+    command: ["python", "scripts/start_api.py", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - airaware-network
+
+  # Streamlit Frontend Service
+  ui:
+    build: .
+    container_name: airaware-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+      - ENVIRONMENT=production
+      - API_BASE_URL=http://airaware-api:8000
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./configs:/app/configs
+    command: ["python", "scripts/start_ui.py", "--host", "0.0.0.0", "--port", "8501"]
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - airaware-network
+
+  # Data Processing Service (for batch jobs)
+  processor:
+    build: .
+    container_name: airaware-processor
+    environment:
+      - PYTHONPATH=/app
+      - ENVIRONMENT=production
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./configs:/app/configs
+      - ./scripts:/app/scripts
+    command: ["python", "main.py", "--test"]
+    profiles:
+      - processing
+    restart: "no"
+    networks:
+      - airaware-network
+
+  # Documentation Service (MkDocs)
+  docs:
+    build: .
+    container_name: airaware-docs
+    ports:
+      - "8001:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./docs:/app/docs
+      - ./mkdocs.yml:/app/mkdocs.yml
+    command: ["mkdocs", "serve", "--dev-addr", "0.0.0.0:8000"]
+    profiles:
+      - docs
+    restart: unless-stopped
+    networks:
+      - airaware-network
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: airaware-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    profiles:
+      - cache
+    restart: unless-stopped
+    networks:
+      - airaware-network
+
+  # PostgreSQL for data storage (optional)
+  postgres:
+    image: postgres:15-alpine
+    container_name: airaware-postgres
+    environment:
+      - POSTGRES_DB=airaware
+      - POSTGRES_USER=airaware
+      - POSTGRES_PASSWORD=airaware_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./data:/docker-entrypoint-initdb.d
+    profiles:
+      - database
+    restart: unless-stopped
+    networks:
+      - airaware-network
+
+volumes:
+  redis_data:
+  postgres_data:
+
+networks:
+  airaware-network:
+    driver: bridge
+

@@ -16,6 +16,7 @@ import json
 from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional
 import time
+import os
 
 # Page configuration
 st.set_page_config(
@@ -101,7 +102,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # API Configuration
-API_BASE_URL = "http://localhost:8000"
+# Use environment variable for API URL, fallback to localhost for local development
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
 
 
 class AirAwareUI:
@@ -316,7 +318,7 @@ def render_sidebar(ui: AirAwareUI):
         st.sidebar.markdown("""
         <div class="warning-box">
             <strong>API Connection Issue:</strong> Please ensure the FastAPI server is running 
-            on localhost:8000. You can start it with:<br><br>
+            on {API_BASE_URL}. You can start it with:<br><br>
             <code>python -m airaware.api.app</code>
         </div>
         """, unsafe_allow_html=True)

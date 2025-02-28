@@ -19,3 +19,37 @@
 - FastAPI service loads best artifacts (Prophet params, PatchTST best)
 - Ensemble + uncertainty generation in `ForecastService`
 - Streamlit UI displays forecasts, uncertainty, badges, and analysis
+
+## Docker Workflow
+
+### Development
+```bash
+# Start development environment
+docker compose -f docker-compose.dev.yml up
+
+# Features:
+# - Live code reloading
+# - Volume mounts for source code
+# - Development tools included
+```
+
+### Production
+```bash
+# Build and deploy
+docker compose up --build
+
+# Services:
+# - API: FastAPI backend
+# - UI: Streamlit frontend
+# - Processor: Batch job service
+# - Docs: MkDocs documentation
+```
+
+### Management
+```bash
+# Use helper script
+./scripts/docker_helper.sh build
+./scripts/docker_helper.sh up
+./scripts/docker_helper.sh logs
+./scripts/docker_helper.sh down
+```

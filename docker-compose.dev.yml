@@ -1,0 +1,68 @@
+version: '3.8'
+
+# Development override for docker-compose.yml
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  # FastAPI Backend Service (Development)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=development
+      - PYTHONPATH=/app
+    volumes:
+      - .:/app  # Mount source code for live reload
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./logs:/app/logs
+      - ./configs:/app/configs
+    command: ["python", "scripts/start_api.py", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    ports:
+      - "8000:8000"
+    networks:
+      - airaware-network
+
+  # Streamlit Frontend Service (Development)
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ENVIRONMENT=development
+      - PYTHONPATH=/app
+    volumes:
+      - .:/app  # Mount source code for live reload
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./configs:/app/configs
+    command: ["python", "scripts/start_ui.py", "--host", "0.0.0.0", "--port", "8501"]
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    networks:
+      - airaware-network
+
+  # Documentation Service (Development)
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - .:/app  # Mount source code for live reload
+    command: ["mkdocs", "serve", "--dev-addr", "0.0.0.0:8000", "--livereload"]
+    ports:
+      - "8001:8000"
+    profiles:
+      - docs
+    networks:
+      - airaware-network
+
+networks:
+  airaware-network:
+    driver: bridge
+
