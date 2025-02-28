@@ -1,0 +1,236 @@
+{
+  "config": {
+    "n_repeats": 10,
+    "random_state": null,
+    "use_permutation_importance": true,
+    "use_tree_importance": true,
+    "use_correlation_analysis": true,
+    "use_mutual_information": true,
+    "correlation_threshold": 0.7,
+    "use_absolute_correlation": true,
+    "mi_discrete_features": false,
+    "mi_n_neighbors": 3,
+    "top_k_features": 20,
+    "importance_threshold": 0.01,
+    "use_temporal_importance": true,
+    "temporal_windows": [
+      1,
+      3,
+      6,
+      12,
+      24
+    ],
+    "use_stability_analysis": true,
+    "stability_splits": 5
+  },
+  "importance_results": {
+    "permutation": {
+      "importances": "[0.01764672 0.02483487 0.01741842 0.14665974 0.53138849 0.10440659\n 0.06234764 0.40266892 0.81266837]",
+      "std": "[0.00018755 0.00020738 0.00023249 0.00155582 0.00379685 0.00046865\n 0.00030198 0.00270357 0.00574   ]",
+      "feature_names": [
+        "station_id",
+        "latitude",
+        "longitude",
+        "u10",
+        "v10",
+        "wind_speed",
+        "wind_direction",
+        "t2m_celsius",
+        "blh"
+      ]
+    },
+    "tree": {
+      "importances": "[0.01120853 0.01357866 0.01115247 0.05757841 0.17813475 0.05307965\n 0.03550571 0.13236784 0.50739398]",
+      "feature_names": [
+        "station_id",
+        "latitude",
+        "longitude",
+        "u10",
+        "v10",
+        "wind_speed",
+        "wind_direction",
+        "t2m_celsius",
+        "blh"
+      ]
+    },
+    "correlation": {
+      "importances": "[0.03699336 0.03512947 0.02956053 0.05181125 0.6036898  0.27239803\n 0.03102317 0.14345911 0.65616764]",
+      "feature_names": [
+        "station_id",
+        "latitude",
+        "longitude",
+        "u10",
+        "v10",
+        "wind_speed",
+        "wind_direction",
+        "t2m_celsius",
+        "blh"
+      ]
+    },
+    "mutual_information": {
+      "importances": "[0.         0.         0.         0.0511078  0.24595485 0.06350237\n 0.28297559 0.14098996 0.27615455]",
+      "feature_names": [
+        "station_id",
+        "latitude",
+        "longitude",
+        "u10",
+        "v10",
+        "wind_speed",
+        "wind_direction",
+        "t2m_celsius",
+        "blh"
+      ]
+    },
+    "temporal": {
+      "window_1": {
+        "importances": "[nan nan nan nan nan nan nan nan nan]",
+        "std": "[nan nan nan nan nan nan nan nan nan]"
+      },
+      "window_3": {
+        "importances": "[ 0.          0.          0.         -0.00225104  0.14413961  0.07601995\n  0.1095979  -0.01631488  1.06930968]",
+        "std": "[0.         0.         0.         0.02363244 0.18162484 0.09314795\n 0.13457264 0.04804204 1.30999989]"
+      },
+      "window_6": {
+        "importances": "[0.         0.         0.         0.37020379 0.28528339 0.2651819\n 0.13833163 0.08071619 0.87566736]",
+        "std": "[0.         0.         0.         0.11176061 0.1512981  0.03272614\n 0.01012868 0.06168779 0.34899986]"
+      },
+      "window_12": {
+        "importances": "[0.         0.         0.         0.43850016 0.29665363 0.13732829\n 0.10494984 0.25684044 0.75284747]",
+        "std": "[0.         0.         0.         0.20249931 0.15579932 0.03537071\n 0.03284554 0.03742211 0.28594716]"
+      },
+      "window_24": {
+        "importances": "[0.         0.         0.         0.09505597 0.52538137 0.03695133\n 0.03615795 0.11847638 0.89068856]",
+        "std": "[0.         0.         0.         0.04133942 0.12732418 0.01127348\n 0.01472001 0.01953879 0.15728624]"
+      }
+    }
+  },
+  "stability_results": {
+    "mean_importance": "[0.01035922 0.01256356 0.01008848 0.05661869 0.17983532 0.0539655\n 0.03656287 0.13245299 0.50755337]",
+    "std_importance": "[0.00014051 0.00023532 0.00015382 0.00159606 0.0017239  0.00073892\n 0.00076641 0.00098695 0.00251708]",
+    "cv_importance": "[0.01356389 0.01873069 0.01524711 0.02818967 0.009586   0.0136924\n 0.0209613  0.00745133 0.00495924]",
+    "stability_scores": "[[0.0101466  0.01213512 0.00981792 0.05407883 0.18154669 0.05526492\n  0.03506712 0.13152845 0.51041436]\n [0.01046447 0.0127875  0.01021263 0.05886791 0.17728046 0.05350751\n  0.03712286 0.13136043 0.50839622]\n [0.0102998  0.01265394 0.01012482 0.05602441 0.18164696 0.05373318\n  0.03692735 0.1331266  0.50546295]\n [0.01033081 0.01250125 0.01003792 0.05656998 0.17844229 0.05311676\n  0.03706065 0.13226868 0.50967166]\n [0.0105544  0.01273999 0.01024914 0.05755232 0.18026019 0.05420514\n  0.03663639 0.13398079 0.50382165]]",
+    "feature_names": [
+      "station_id",
+      "latitude",
+      "longitude",
+      "u10",
+      "v10",
+      "wind_speed",
+      "wind_direction",
+      "t2m_celsius",
+      "blh"
+    ]
+  },
+  "feature_names": [
+    "station_id",
+    "latitude",
+    "longitude",
+    "u10",
+    "v10",
+    "wind_speed",
+    "wind_direction",
+    "t2m_celsius",
+    "blh"
+  ],
+  "summary": {
+    "methods_used": [
+      "permutation",
+      "tree",
+      "correlation",
+      "mutual_information",
+      "temporal"
+    ],
+    "n_features": 9,
+    "top_features": {
+      "permutation": [
+        [
+          "blh",
+          0.8126683683376313
+        ],
+        [
+          "v10",
+          0.5313884948856287
+        ],
+        [
+          "t2m_celsius",
+          0.402668924842013
+        ],
+        [
+          "u10",
+          0.1466597399328836
+        ],
+        [
+          "wind_speed",
+          0.10440658615247145
+        ]
+      ],
+      "tree": [
+        [
+          "blh",
+          0.507393977348864
+        ],
+        [
+          "v10",
+          0.17813475330361628
+        ],
+        [
+          "t2m_celsius",
+          0.13236783803453572
+        ],
+        [
+          "u10",
+          0.05757841162634291
+        ],
+        [
+          "wind_speed",
+          0.05307965224772369
+        ]
+      ],
+      "correlation": [
+        [
+          "blh",
+          0.6561676440435977
+        ],
+        [
+          "v10",
+          0.6036898031363832
+        ],
+        [
+          "wind_speed",
+          0.2723980331518029
+        ],
+        [
+          "t2m_celsius",
+          0.14345911192020988
+        ],
+        [
+          "u10",
+          0.05181125189124604
+        ]
+      ],
+      "mutual_information": [
+        [
+          "wind_direction",
+          0.2829755867336061
+        ],
+        [
+          "blh",
+          0.2761545517531401
+        ],
+        [
+          "v10",
+          0.24595485314724197
+        ],
+        [
+          "t2m_celsius",
+          0.14098996275824316
+        ],
+        [
+          "wind_speed",
+          0.06350236537768161
+        ]
+      ]
+    },
+    "stability_analysis": true
+  }
+}

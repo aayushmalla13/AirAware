@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+dist/
+build/
+.cache/
+
+# Environments
+.venv/
+venv/
+ENV/
+.env
+.env.*
+
+# Editors/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+/tmp/*.log
+
+# Streamlit
+.streamlit/
+
+# Data & Artifacts (kept out of git; create locally via scripts)
+data/processed/**
+!data/processed/.gitkeep
+data/cache/**
+!data/cache/.gitkeep
+data/artifacts/**
+!data/artifacts/.gitkeep
+
+# Deep model run logs
+**/deep_models/**/run_*.log
+
+# MkDocs build output
+site/
+
+# Notebooks
+*.ipynb_checkpoints
+
+# Misc
+*.tmp
+*.bak

@@ -1,0 +1,7 @@
+{
+  "config": "ConformalConfig(alpha=0.1, method='quantile', calibration_ratio=0.2, random_state=None, use_adaptive=False, adaptation_window=100, quantile_method='linear', normalize_scores=True, normalization_method='standard', respect_temporal_order=True, use_rolling_calibration=False, rolling_window=1000)",
+  "calibration_scores": "[ 1.2998001   3.81543228 12.4629841  ... 18.21256923  0.84906771\n  1.19994767]",
+  "quantile_threshold": 15.77641591173547,
+  "calibration_data": null,
+  "is_fitted": true
+}

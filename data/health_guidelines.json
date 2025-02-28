@@ -1,0 +1,44 @@
+{
+  "pm25_thresholds": {
+    "good": 12,
+    "moderate": 35,
+    "unhealthy_sensitive": 55,
+    "unhealthy": 150,
+    "hazardous": 200
+  },
+  "health_effects": {
+    "short_term": [
+      "Eye, nose, throat irritation",
+      "Coughing, sneezing, runny nose",
+      "Shortness of breath"
+    ],
+    "long_term": [
+      "Reduced lung function",
+      "Chronic bronchitis",
+      "Aggravated asthma",
+      "Heart disease",
+      "Lung cancer"
+    ]
+  },
+  "vulnerable_groups": [
+    "Children",
+    "Elderly",
+    "People with heart or lung disease",
+    "Pregnant women",
+    "People with diabetes"
+  ],
+  "protective_measures": {
+    "indoor": [
+      "Use air purifiers with HEPA filters",
+      "Keep windows and doors closed",
+      "Avoid activities that create indoor pollution",
+      "Use exhaust fans when cooking"
+    ],
+    "outdoor": [
+      "Wear N95 or better masks",
+      "Avoid outdoor exercise",
+      "Stay indoors during peak pollution hours",
+      "Use public transportation instead of driving"
+    ]
+  }
+}

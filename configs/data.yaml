@@ -1,0 +1,83 @@
+valley_bbox:
+  north: 28.0
+  south: 27.4
+  east: 85.6
+  west: 84.8
+center_lat: 27.7172
+center_lon: 85.324
+search_radius_km: 25.0
+stations:
+- station_id: 5509787
+  name: Baluwatar (SC-02)
+  latitude: 27.7249438
+  longitude: 85.331062
+  distance_km: 1.1
+  quality_score: 0.85
+  missingness_pct: 15.0
+  pm25_sensor_ids:
+  - 14207425
+  first_measurement: '2024-06-01T00:00:00+00:00'
+  last_measurement: '2025-09-30T00:00:00+00:00'
+  data_span_days: 487
+  selected_reason: primary_selection
+- station_id: 5506835
+  name: Gaushala Chowk (SC-01)
+  latitude: 27.707763
+  longitude: 85.343189
+  distance_km: 2.2
+  quality_score: 0.82
+  missingness_pct: 18.0
+  pm25_sensor_ids:
+  - 14153358
+  first_measurement: '2024-06-01T00:00:00+00:00'
+  last_measurement: '2025-09-30T00:00:00+00:00'
+  data_span_days: 487
+  selected_reason: primary_selection
+- station_id: 5633032
+  name: Nakhipot (SC-08)
+  latitude: 27.6510811
+  longitude: 85.3178568
+  distance_km: 7.4
+  quality_score: 0.78
+  missingness_pct: 22.0
+  pm25_sensor_ids:
+  - 14153373
+  first_measurement: '2024-06-01T00:00:00+00:00'
+  last_measurement: '2025-09-30T00:00:00+00:00'
+  data_span_days: 487
+  selected_reason: primary_selection
+min_quality_score: 0.3
+max_missingness_pct: 30.0
+date_from: '2024-06-01T00:00:00+00:00'
+date_to: '2025-09-30T00:00:00+00:00'
+frequency: 1H
+timezone_storage: UTC
+timezone_display: Asia/Kathmandu
+min_data_span_days: 60
+backup_stations:
+- station_id: 104
+  name: Dabali, Handigaun
+  latitude: 27.725
+  longitude: 85.335
+  distance_km: 5.3
+  quality_score: 0.28
+  missingness_pct: 35.0
+  pm25_sensor_ids:
+  - 9235746
+  first_measurement: '2024-06-01T00:00:00+00:00'
+  last_measurement: '2025-09-30T00:00:00+00:00'
+  data_span_days: 486
+  selected_reason: backup_station
+- station_id: 105
+  name: Gaushala Chowk (SC-01)
+  latitude: 27.71
+  longitude: 85.31
+  distance_km: 2.2
+  quality_score: 0.35
+  missingness_pct: 32.0
+  pm25_sensor_ids:
+  - 14153373
+  first_measurement: '2024-06-01T00:00:00+00:00'
+  last_measurement: '2025-09-30T00:00:00+00:00'
+  data_span_days: 486
+  selected_reason: backup_station

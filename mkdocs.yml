@@ -1,0 +1,21 @@
+site_name: AirAware Documentation
+site_description: PM2.5 Nowcasting System - Architecture, Algorithms, and Codebase
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+nav:
+  - Home: index.md
+  - Workflow: workflow.md
+  - Tech Stack: techstack.md
+  - Algorithms: algorithms.md
+  - Architecture: architecture.md
+  - Codebase: codebase.md
+
