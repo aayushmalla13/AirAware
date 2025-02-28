@@ -1,0 +1,42 @@
+{
+  "model_type": "Temporal Calibration",
+  "config": {
+    "use_temporal_weighting": true,
+    "temporal_decay": 0.99,
+    "temporal_window": 1000,
+    "use_seasonal_calibration": true,
+    "seasonal_periods": [
+      24,
+      168
+    ],
+    "use_trend_calibration": true,
+    "trend_window": 100,
+    "use_holiday_calibration": false,
+    "holiday_dates": null,
+    "use_hourly_calibration": true,
+    "hourly_bins": 6,
+    "use_weekly_calibration": true
+  },
+  "training_time": 0.12250041961669922,
+  "test_metrics": {
+    "mae": 7.877821763486526,
+    "rmse": 9.92843507050348,
+    "coverage": 0.0,
+    "interval_width": 0.00042465219641483164,
+    "calibration_error": 0.9,
+    "threshold": 0.0002123260982056824
+  },
+  "temporal_summary": {
+    "temporal_weights": {
+      "weights": "[1.25077085e-33 1.26340490e-33 1.27616656e-33 ... 9.80100000e-03\n 9.90000000e-03 1.00000000e-02]",
+      "decay_factor": 0.99
+    },
+    "seasonal_calibrators": {
+      "24": 24,
+      "168": 7
+    },
+    "trend_calibrator": true,
+    "hourly_calibrators": 6,
+    "weekly_calibrators": 7
+  }
+}

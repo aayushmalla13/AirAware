@@ -1,0 +1,38 @@
+{
+  "conformal": {
+    "evaluation": {
+      "mae": 7.877821763486526,
+      "rmse": 9.92843507050348,
+      "coverage": 0.8878689450642565,
+      "coverage_error": 0.012131054935743513,
+      "interval_width": 31.55283182347093,
+      "sharpness": 0.03169287643006859,
+      "winkler_score": 41.604106924073,
+      "interval_score": 1.449338586747344
+    }
+  },
+  "quantile": {
+    "evaluation": {
+      "mae": 7.877821763486526,
+      "rmse": 9.92843507050348,
+      "coverage": 0.8943652026549922,
+      "coverage_error": 0.005634797345007825,
+      "interval_width": 31.60786021175909,
+      "sharpness": 0.03163770003095526,
+      "winkler_score": 41.46051654301715,
+      "interval_score": 1.4453488304606328
+    }
+  },
+  "adaptive_conformal": {
+    "evaluation": {
+      "mae": 7.877821763486526,
+      "rmse": 9.92843507050348,
+      "coverage": 0.8878689450642565,
+      "coverage_error": 0.012131054935743513,
+      "interval_width": 31.55283182347093,
+      "sharpness": 0.03169287643006859,
+      "winkler_score": 41.604106924073,
+      "interval_score": 1.449338586747344
+    }
+  }
+}

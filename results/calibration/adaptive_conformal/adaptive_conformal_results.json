@@ -1,0 +1,46 @@
+{
+  "model_type": "Adaptive Conformal Calibration",
+  "base_model": "random_forest",
+  "config": {
+    "alpha": 0.1,
+    "initial_calibration_size": 100,
+    "adaptation_rate": 0.01,
+    "adaptation_method": "online",
+    "use_online_adaptation": true,
+    "online_update_frequency": 1,
+    "use_sliding_window": false,
+    "window_size": 1000,
+    "min_window_size": 100,
+    "use_batch_adaptation": false,
+    "batch_size": 50,
+    "batch_update_frequency": 10,
+    "use_robust_estimation": true,
+    "robust_quantile": 0.95,
+    "respect_temporal_order": true,
+    "use_temporal_weighting": false,
+    "temporal_decay": 0.99,
+    "monitor_coverage": true,
+    "coverage_target": 0.9,
+    "coverage_tolerance": 0.05
+  },
+  "training_time": 13.567286014556885,
+  "test_metrics": {
+    "mae": 7.877821763486526,
+    "rmse": 9.92843507050348,
+    "coverage": 0.8878689450642565,
+    "interval_width": 31.55283182347093,
+    "calibration_error": 0.012131054935743513
+  },
+  "adaptation_summary": {},
+  "predictor_info": {
+    "method": "adaptive_conformal",
+    "alpha": 0.1,
+    "coverage_probability": 0.9,
+    "is_fitted": true,
+    "n_calibration_samples": 7081,
+    "quantile_threshold": 15.77641591173547,
+    "n_samples_seen": 7081,
+    "n_updates": 0,
+    "adaptation_method": "online"
+  }
+}

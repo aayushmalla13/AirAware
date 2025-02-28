@@ -1,0 +1,165 @@
+{
+  "model_type": "Feature Importance Analysis",
+  "config": {
+    "n_repeats": 10,
+    "random_state": null,
+    "use_permutation_importance": true,
+    "use_tree_importance": true,
+    "use_correlation_analysis": true,
+    "use_mutual_information": true,
+    "correlation_threshold": 0.7,
+    "use_absolute_correlation": true,
+    "mi_discrete_features": false,
+    "mi_n_neighbors": 3,
+    "top_k_features": 20,
+    "importance_threshold": 0.01,
+    "use_temporal_importance": true,
+    "temporal_windows": [
+      1,
+      3,
+      6,
+      12,
+      24
+    ],
+    "use_stability_analysis": true,
+    "stability_splits": 5
+  },
+  "analysis_time": 125.20898151397705,
+  "importance_summary": {
+    "methods_used": [
+      "permutation",
+      "tree",
+      "correlation",
+      "mutual_information",
+      "temporal"
+    ],
+    "n_features": 9,
+    "top_features": {
+      "permutation": [
+        [
+          "blh",
+          0.8126683683376313
+        ],
+        [
+          "v10",
+          0.5313884948856287
+        ],
+        [
+          "t2m_celsius",
+          0.402668924842013
+        ],
+        [
+          "u10",
+          0.1466597399328836
+        ],
+        [
+          "wind_speed",
+          0.10440658615247145
+        ]
+      ],
+      "tree": [
+        [
+          "blh",
+          0.507393977348864
+        ],
+        [
+          "v10",
+          0.17813475330361628
+        ],
+        [
+          "t2m_celsius",
+          0.13236783803453572
+        ],
+        [
+          "u10",
+          0.05757841162634291
+        ],
+        [
+          "wind_speed",
+          0.05307965224772369
+        ]
+      ],
+      "correlation": [
+        [
+          "blh",
+          0.6561676440435977
+        ],
+        [
+          "v10",
+          0.6036898031363832
+        ],
+        [
+          "wind_speed",
+          0.2723980331518029
+        ],
+        [
+          "t2m_celsius",
+          0.14345911192020988
+        ],
+        [
+          "u10",
+          0.05181125189124604
+        ]
+      ],
+      "mutual_information": [
+        [
+          "wind_direction",
+          0.2829755867336061
+        ],
+        [
+          "blh",
+          0.2761545517531401
+        ],
+        [
+          "v10",
+          0.24595485314724197
+        ],
+        [
+          "t2m_celsius",
+          0.14098996275824316
+        ],
+        [
+          "wind_speed",
+          0.06350236537768161
+        ]
+      ]
+    },
+    "stability_analysis": true
+  },
+  "analyzer_info": {
+    "method": "feature_importance",
+    "is_fitted": true,
+    "n_features": 9,
+    "methods_used": [
+      "permutation",
+      "tree",
+      "correlation",
+      "mutual_information",
+      "temporal"
+    ],
+    "config": {
+      "n_repeats": 10,
+      "random_state": null,
+      "use_permutation_importance": true,
+      "use_tree_importance": true,
+      "use_correlation_analysis": true,
+      "use_mutual_information": true,
+      "correlation_threshold": 0.7,
+      "use_absolute_correlation": true,
+      "mi_discrete_features": false,
+      "mi_n_neighbors": 3,
+      "top_k_features": 20,
+      "importance_threshold": 0.01,
+      "use_temporal_importance": true,
+      "temporal_windows": [
+        1,
+        3,
+        6,
+        12,
+        24
+      ],
+      "use_stability_analysis": true,
+      "stability_splits": 5
+    }
+  }
+}
