@@ -1,0 +1,39 @@
+{
+  "model_type": "Quantile Calibration",
+  "base_model": "random_forest",
+  "config": {
+    "target_quantiles": [
+      0.05,
+      0.95
+    ],
+    "calibration_method": "linear",
+    "calibration_ratio": 0.2,
+    "random_state": null,
+    "validate_calibration": true,
+    "validation_ratio": 0.1,
+    "use_smoothing": false,
+    "smoothing_factor": 0.1,
+    "respect_temporal_order": true,
+    "use_rolling_calibration": false,
+    "rolling_window": 1000
+  },
+  "training_time": 13.83259630203247,
+  "test_metrics": {
+    "mae": 7.877821763486526,
+    "rmse": 9.92843507050348,
+    "coverage_results": {}
+  },
+  "calibrator_info": {
+    "method": "linear",
+    "target_quantiles": [
+      0.05,
+      0.95
+    ],
+    "is_fitted": true,
+    "n_calibration_samples": 7081,
+    "calibrated_quantiles": [
+      0.05,
+      0.95
+    ]
+  }
+}

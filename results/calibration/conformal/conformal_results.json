@@ -1,0 +1,35 @@
+{
+  "model_type": "Conformal Calibration",
+  "base_model": "random_forest",
+  "config": {
+    "alpha": 0.1,
+    "method": "quantile",
+    "calibration_ratio": 0.2,
+    "random_state": null,
+    "use_adaptive": false,
+    "adaptation_window": 100,
+    "quantile_method": "linear",
+    "normalize_scores": true,
+    "normalization_method": "standard",
+    "respect_temporal_order": true,
+    "use_rolling_calibration": false,
+    "rolling_window": 1000
+  },
+  "training_time": 13.362104177474976,
+  "test_metrics": {
+    "mae": 7.877821763486526,
+    "rmse": 9.92843507050348,
+    "coverage": 0.8878689450642565,
+    "interval_width": 31.55283182347093,
+    "calibration_error": 0.012131054935743513
+  },
+  "predictor_info": {
+    "method": "quantile",
+    "alpha": 0.1,
+    "coverage_probability": 0.9,
+    "is_fitted": true,
+    "n_calibration_samples": 7081,
+    "quantile_threshold": 15.77641591173547,
+    "use_adaptive": false
+  }
+}

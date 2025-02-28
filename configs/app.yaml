@@ -1,0 +1,45 @@
+# AirAware Application Configuration
+# CP-2: Production-grade PM₂.₅ nowcasting application settings
+
+app_name: "AirAware"
+version: "1.0.0"
+
+# User Interface Configuration
+ui:
+  language_default: "auto"  # auto-detect from browser, fallback to English
+  language_options:
+    - "en"  # English
+    - "ne"  # Nepali (नेपाली)
+  timezone_display: "Asia/Kathmandu"
+  forecast_horizons:
+    - 6   # 6-hour forecast
+    - 12  # 12-hour forecast  
+    - 24  # 24-hour forecast (primary)
+  uncertainty_levels:
+    - 0.8   # 80% confidence interval
+    - 0.9   # 90% confidence interval
+    - 0.95  # 95% confidence interval
+  refresh_interval_minutes: 60
+  max_stations_display: 10
+
+# API Configuration
+api_host: "0.0.0.0"
+api_port: 8000
+api_workers: 1
+
+# Model Configuration
+model_cache_ttl_hours: 24
+prediction_batch_size: 32
+max_forecast_horizon: 24
+
+# Logging Configuration
+log_level: "INFO"
+log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Security Configuration
+enable_cors: true
+cors_origins:
+  - "*"  # Allow all origins for development; restrict in production
+rate_limit_requests: 100  # requests per minute
+
+

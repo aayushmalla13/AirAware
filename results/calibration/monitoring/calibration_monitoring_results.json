@@ -1,0 +1,24 @@
+{
+  "model_type": "Calibration Monitoring",
+  "config": {
+    "monitor_frequency": 100,
+    "alert_threshold": 0.05,
+    "min_samples_for_alert": 50,
+    "use_drift_detection": true,
+    "drift_threshold": 0.1,
+    "drift_window": 500,
+    "track_coverage": true,
+    "track_interval_width": true,
+    "track_calibration_error": true,
+    "use_alerts": true,
+    "alert_methods": [
+      "log"
+    ]
+  },
+  "monitoring_time": 0.5402266979217529,
+  "monitoring_summary": {
+    "status": "not_monitoring"
+  },
+  "alerts": [],
+  "n_alerts": 0
+}
