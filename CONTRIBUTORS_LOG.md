@@ -641,3 +641,4 @@
 - 2025-02-28 14:46 +0545 | babin411 | [ML] Initial add (bootstrap, balanced by LOC)
 - 2025-02-28 14:47 +0545 | shijalsharmapoudel | [ML] Initial add (bootstrap, balanced by LOC)
 - 2025-02-24 14:45 +0545 | aayushmalla13 | [ML] Prophet model optimization (merge)
+- 2025-03-03 15:56 +0545 | aayushmalla13 | [ML] API services development (feat)
