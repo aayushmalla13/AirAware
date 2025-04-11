@@ -669,3 +669,4 @@
 - 2025-03-26 20:51 +0545 | babin411 | [ML] Deep models CLI (fix)
 - 2025-03-31 22:02 +0545 | babin411 | [ML] Feature engineering CLI (delete)
 - 2025-04-05 15:13 +0545 | babin411 | [ML] Enhanced feature engineering (feat)
+- 2025-04-11 16:24 +0545 | babin411 | [ML] Residual analysis CLI (fix)
