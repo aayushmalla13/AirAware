@@ -696,3 +696,4 @@
 - 2025-05-02 21:47 UTC | shijalsharmapoudel | [ML] Dynamic ensemble
 - 2025-05-07 17:09 UTC | shijalsharmapoudel | [ML] Statistical modeling
 - 2025-05-12 12:31 UTC | shijalsharmapoudel | [ML] Time-series diagnostics
+- 2025-05-17 07:53 UTC | shijalsharmapoudel | [ML] Anomaly detection
