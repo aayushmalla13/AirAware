@@ -699,3 +699,4 @@
 - 2025-05-17 07:53 UTC | shijalsharmapoudel | [ML] Anomaly detection
 - 2025-05-22 03:15 UTC | shijalsharmapoudel | [ML] Data pipeline checks
 - 2025-05-26 22:37 UTC | shijalsharmapoudel | [ML] Monitoring dashboard
+- 2025-05-31 18:00 UTC | shijalsharmapoudel | [ML] Alert thresholds
